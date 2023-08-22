@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 export const AnimeContainer: React.FC<IAnimeComponentProps> = ({
   animeData,
 }) => {
-  console.log("data: ", animeData);
-
   const [isLoading, setIsLoading] = useState(true);
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -23,6 +21,7 @@ export const AnimeContainer: React.FC<IAnimeComponentProps> = ({
     } else {
       warning();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [animeData]);
 
   return (

@@ -10,6 +10,7 @@ const App = () => {
 
   const [query, setQuery] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
+  // eslint-disable-next-line
   const [currentLimit, setCurrentLimit] = useState<number>(15);
   const [animeData, setAnimeData] = useState<IAnimeComponentProps>({
     animeData: {
@@ -24,6 +25,7 @@ const App = () => {
 
   useEffect(() => {
     fetchAnimeData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentLimit, currentPage, query]);
 
   // Debounce the handleSearch function
@@ -67,7 +69,6 @@ const App = () => {
       <div style={{ marginBottom: "2em" }}>
         <span>Total {currentTotal} matching anime characters found.</span>
       </div>
-      {/* Use onChange event for search input */}
       <Search
         placeholder="Search Anime Characters"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
